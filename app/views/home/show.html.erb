@@ -1,4 +1,15 @@
-<h1>Home#show</h1>
-<p>Find me in app/views/home/show.html.erb</p>
+<h1>Home page</h1>
+<p>This page has a JS form that updates the DOM</p>
+
+<ol class="output_list">
+</ol>
+
+<%= form_tag '#', class: "input_form", method: "get" do  %>
+  <%= label_tag :first_name do %>
+    Enter some text
+    <%= text_field_tag :first_name %>
+  <% end %>
+  <%= submit_tag "Done" %>
+<% end %>
 
 <%= render "statics/links" %>
