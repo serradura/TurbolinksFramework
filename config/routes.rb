@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'statics/page_a'
+
+  get 'statics/page_b'
+
+  get 'statics/page_c'
+
+  root to: "home#show"
 end
