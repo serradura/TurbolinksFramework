@@ -46,6 +46,8 @@ class @Application
 
 
 # Add listeners to implement the above code when Turbolinks has updated the page.
-document.addEventListener 'turbolinks:load',          Application.setup, {once: true}
-document.addEventListener 'turbolinks:render',        Application.setup
-document.addEventListener 'turbolinks:before-render', Application.teardown
+# NOTE: I removed document.addEventListener('turbolinks:load', Application.setup, {once: true})
+# because the "once" event listener option, ins't supported by all browsers. See: http://caniuse.com/#search=once
+document.addEventListener "DOMContentLoaded",         Application.setup
+document.addEventListener "turbolinks:render",        Application.setup
+document.addEventListener "turbolinks:before-render", Application.teardown
